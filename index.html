@@ -6,6 +6,22 @@
     <title>AI Chat Widget Studio - Quick Launcher</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <style>
+        /* Emergency override to force centering */
+        body {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            min-height: 100vh !important;
+            margin: 0 !important;
+            padding: 20px !important;
+        }
+        .container {
+            width: 100% !important;
+            max-width: 900px !important;
+            margin: 0 auto !important;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -16,8 +32,7 @@
                     <h1>AI Chat Widget Studio</h1>
                 </div>
                 <p class="subtitle">Quick Launcher - Choose Your Template</p>
-            </div>
-            
+            </div>            
             <div class="templates-grid">
                 <div class="template-card generic">
                     <div class="icon">🤖</div>
@@ -48,8 +63,7 @@
                     <h3>Gutter Guards</h3>
                     <p>Home protection</p>
                 </div>
-            </div>
-            
+            </div>            
             <div class="action-buttons">
                 <button class="btn-primary">
                     <span>🎨</span> Open All Templates
