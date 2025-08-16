@@ -3,42 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chat Widget Studio - Quick Launcher</title>
+    <title>AI Chat Widget Studio</title>
+</head>
+<body>
     <style>
-        /* RESET EVERYTHING */
+        /* RESET ALL DEFAULTS */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        /* FULL HEIGHT */
-        html, body {
+        /* REMOVE ALL MARGINS AND PADDING FROM HTML AND BODY */
+        html {
+            margin: 0;
+            padding: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
         }
         
-        /* CENTER USING GRID - MOST RELIABLE METHOD */
         body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: grid;
-            place-items: center;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            
+            /* USE FLEXBOX FOR CENTERING */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
-        /* MAIN PANEL */
-        .panel {
+        /* THE MAIN PANEL - NO WRAPPER, NO CONTAINER */
+        .studio-panel {
             background: white;
             border-radius: 20px;
             padding: 40px;
             width: 900px;
-            max-width: 90vw;
-            max-height: 90vh;
-            overflow-y: auto;
+            max-width: calc(100% - 40px);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }        
-        /* HEADER */
+        }
+        
+        /* Rest of styles */
         .header {
             text-align: center;
             margin-bottom: 30px;
@@ -52,27 +60,25 @@
             margin-bottom: 10px;
         }
         
-        .logo {
-            font-size: 48px;
-        }
-        
         h1 {
             font-size: 32px;
             color: #333;
+            margin: 0;
         }
         
         .subtitle {
             color: #666;
             font-size: 16px;
+            margin: 0;
         }
         
-        /* TEMPLATES GRID */
         .templates-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 15px;
             margin-bottom: 30px;
-        }        
+        }
+        
         .template-card {
             padding: 25px 15px;
             border-radius: 12px;
@@ -86,28 +92,28 @@
             transform: translateY(-5px);
         }
         
-        .template-card .icon {
+        .icon {
             font-size: 48px;
             margin-bottom: 10px;
         }
         
         .template-card h3 {
             font-size: 18px;
-            margin-bottom: 5px;
+            margin: 0 0 5px 0;
         }
         
         .template-card p {
             font-size: 13px;
             opacity: 0.9;
+            margin: 0;
         }
         
-        /* TEMPLATE COLORS */
         .generic { background: linear-gradient(135deg, #a855f7, #9333ea); }
         .hvac { background: linear-gradient(135deg, #f97316, #dc2626); }
         .lawn-care { background: linear-gradient(135deg, #22c55e, #16a34a); }
         .pool-services { background: linear-gradient(135deg, #3b82f6, #0ea5e9); }
-        .gutter-guards { background: linear-gradient(135deg, #6b7280, #4b5563); }        
-        /* BUTTONS */
+        .gutter-guards { background: linear-gradient(135deg, #6b7280, #4b5563); }
+        
         .action-buttons {
             display: flex;
             gap: 15px;
@@ -123,7 +129,7 @@
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
         }
@@ -139,18 +145,19 @@
             border: 2px solid #667eea;
         }
         
-        /* INSTRUCTIONS */
         .instructions {
             background: #f9fafb;
             border-radius: 12px;
             padding: 20px;
-        }        
+        }
+        
         .instructions h4 {
             color: #333;
-            margin-bottom: 15px;
+            margin: 0 0 15px 0;
         }
         
         .instructions ol {
+            margin: 0;
             padding-left: 20px;
             color: #666;
         }
@@ -159,14 +166,12 @@
             margin-bottom: 8px;
         }
     </style>
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <!-- SINGLE CENTERED PANEL -->
-    <div class="panel">
+    
+    <!-- DIRECTLY IN BODY - NO CONTAINERS -->
+    <div class="studio-panel">
         <div class="header">
             <div class="logo-section">
-                <span class="logo">🚀</span>
+                <span style="font-size: 48px;">🚀</span>
                 <h1>AI Chat Widget Studio</h1>
             </div>
             <p class="subtitle">Quick Launcher - Choose Your Template</p>
@@ -177,7 +182,8 @@
                 <div class="icon">🤖</div>
                 <h3>Generic</h3>
                 <p>All-purpose AI assistant</p>
-            </div>            
+            </div>
+            
             <div class="template-card hvac">
                 <div class="icon">🔥</div>
                 <h3>HVAC</h3>
@@ -210,7 +216,8 @@
             <button class="btn-secondary">
                 <span>🧪</span> Test Preview System
             </button>
-        </div>        
+        </div>
+        
         <div class="instructions">
             <h4>✨ Quick Test Instructions:</h4>
             <ol>
@@ -221,5 +228,7 @@
             </ol>
         </div>
     </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
